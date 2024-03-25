@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useCallback, useContext, useMemo, useState } from 'react';
 
-const CounterContext = createContext({
+export const CounterContext = createContext({
   count: 0,
   increment: () => {},
   decrement: () => {}

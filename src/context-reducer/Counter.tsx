@@ -1,8 +1,8 @@
-import CounterProvider, { CounterContext, useCounter } from './CounterContext';
 import StaticText from '../components/StaticText';
 import CountValue from '../components/CountValue';
 import IncrementButton from '../components/IncrementButton';
 import DecrementButton from '../components/DecrementButton';
+import CounterProvider, { useCounter, useCounterActions } from './CounterContext';
 
 const CountValueWrapper = () => {
   const { count } = useCounter();
@@ -13,20 +13,20 @@ const CountValueWrapper = () => {
 }
 
 const IncrementButtonWrapper = () => {
+  const { increment } = useCounterActions();
+
   console.log('[IncrementButtonWrapper]');
 
   return (
     <>
       <StaticText/>
-      <CounterContext.Consumer>
-        {({ increment }) => <IncrementButton onClick={increment}/>}
-      </CounterContext.Consumer>
+      <IncrementButton onClick={increment}/>
     </>
   );
 }
 
 const DecrementButtonWrapper = () => {
-  const { decrement } = useCounter();
+  const { decrement } = useCounterActions();
 
   console.log('[DecrementButtonWrapper]');
 
