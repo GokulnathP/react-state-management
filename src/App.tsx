@@ -1,7 +1,7 @@
 import './App.css'
 import { QueryClient, QueryClientProvider, } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import Todo from "./react-query/todo.tsx";
+import Todo from "./sync-external-store/todo.tsx";
 
 const queryClient = new QueryClient({ defaultOptions: { queries: { staleTime: Infinity, retry: false } } });
 
